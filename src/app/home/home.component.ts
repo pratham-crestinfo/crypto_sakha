@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  constructor(private activeRoute:ActivatedRoute,private router:Router){}
+  getAuth()
+  {
+    this.router.navigate(['/auth'],{relativeTo:this.activeRoute})
+  }
 }
